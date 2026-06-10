@@ -1,1 +1,22 @@
-{"name": "pi-pdf-watermark", "version": "1.0.0", "description": "Pi skill: Add customizable text watermarks to PDF files — center or tiled, with adjustable angle, font size, opacity, and color.", "keywords": ["pi-package", "pdf", "watermark"], "license": "MIT", "author": "ssdiwu <ssdiwu@users.noreply.github.com>", "repository": {"type": "git", "url": "git+https://github.com/ssdiwu/pi-pdf-watermark.git"}, "pi": {"skills": ["skills"]}}
+{
+  "name": "pi-pdf-watermark",
+  "version": "1.0.1",
+  "description": "Pi skill: Add customizable text watermarks to PDF files — center or tiled, with adjustable angle, font size, opacity, and color.",
+  "keywords": [
+    "pi-package",
+    "pdf",
+    "watermark",
+    "skill"
+  ],
+  "license": "MIT",
+  "author": "ssdiwu <ssdiwu@users.noreply.github.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssdiwu/pi-pdf-watermark.git"
+  },
+  "pi": {
+    "skills": [
+      "skills"
+    ]
+  }
+}
