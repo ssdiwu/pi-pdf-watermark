@@ -11,7 +11,7 @@
 - **Fully customizable**: Text content, rotation angle, font size, opacity, color
 - **Auto page-size detection**: Handles A4, Letter, and any custom page dimensions
 - **Cross-platform**: Auto-detects Chinese fonts on macOS / Linux / Windows
-- **Non-destructive**: Outputs a new `_水印版.pdf` file, never overwrites the original
+- **Defaults to a new file**: Without `-o` it writes `原文件名_水印版.pdf`. It does not yet refuse an output path that resolves to the input, and the write is not atomic — don't point `-o` at the input or any file you need to keep
 
 ## 🚀 Install
 
@@ -104,7 +104,8 @@ pip3 install pypdf reportlab
 ```
 pi-pdf-watermark/
 ├── package.json              # Pi manifest + npm metadata
-├── README.md                 # This file
+├── README.md                 # This file (usage)
+├── doc/README.md             # Doc entry point (navigation only)
 ├── LICENSE                   # MIT License
 └── skills/
     └── pdf-watermark/
