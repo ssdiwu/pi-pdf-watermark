@@ -1,5 +1,7 @@
 # pi-pdf-watermark
 
+English | [简体中文](./README-zh.md)
+
 [![pi-package](https://img.shields.io/badge/pi-package-skill-blue)](https://pi.dev/packages)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -104,7 +106,8 @@ pip3 install pypdf reportlab
 ```
 pi-pdf-watermark/
 ├── package.json              # Pi manifest + npm metadata
-├── README.md                 # This file (usage)
+├── README.md                 # This file (usage, English)
+├── README-zh.md              # Chinese counterpart of this file
 ├── doc/README.md             # Doc entry point (navigation only)
 ├── LICENSE                   # MIT License
 └── skills/
@@ -114,9 +117,32 @@ pi-pdf-watermark/
             └── watermark.py   # Watermark script (CLI-ready)
 ```
 
+## Development and Verification
+
+```bash
+python3 -m py_compile skills/pdf-watermark/references/watermark.py
+```
+
+The single implementation is `skills/pdf-watermark/references/watermark.py`; the CLI and the skill call the same script — do not keep a second copy. Behavior changes also need a temporary PDF check of center/tiled mode, Chinese font, opacity, rotation, error input and input/output same-path rejection; check the page count and that the output opens. Missing a visual check must be stated explicitly.
+
+## Documentation and Core Contracts
+
+| Entry point | What it answers |
+|-------------|-----------------|
+| [`AGENTS.md`](./AGENTS.md) | Agent boundary: untrusted PDF handling, same-path rejection requirement, verification, doc and Git rules |
+| [`skills/pdf-watermark/SKILL.md`](./skills/pdf-watermark/SKILL.md) | Trigger conditions, interaction flow and skill parameters |
+| [`skills/pdf-watermark/references/watermark.py`](./skills/pdf-watermark/references/watermark.py) | The single executable implementation (CLI and skill share it) |
+| [`doc/README.md`](./doc/README.md) | Documentation navigation: current bodies, evidence and history |
+| [`doc/references/`](./doc/references/) | Source, verification record and historical snapshots — not current authority |
+
 ## 🤝 Contributing
 
 PRs welcome! Feel free to open issues for feature requests or bugs.
+
+- This README has two language versions: [`README.md`](./README.md) (English) and [`README-zh.md`](./README-zh.md) (Chinese). Change both in the same commit; the two must stay semantically in sync.
+- The contribution and collaboration rules are in [`AGENTS.md`](./AGENTS.md) and [`doc/README.md`](./doc/README.md).
+- Maintainers record user-visible changes in Chinese and translate them into English when preparing each release. Both changelogs ship alongside the English and Chinese READMEs. [Chinese changelog](./CHANGELOG-zh.md) · [English changelog](./CHANGELOG.md)
+- Do not commit, push, tag or `npm publish` without explicit approval from the maintainer.
 
 ## 📄 License
 
